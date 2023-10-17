@@ -50,8 +50,8 @@ MonoBehaviour:
   _ballPrefab: {fileID: 6458457176902880303, guid: 0e7070d106a56144f920cab44141ef12, type: 3}
   _ballSpawningPoint: {fileID: 2828343483120122577}
   _inputLaunch: {fileID: -549412763989558617, guid: 12481981812f17449beb87b7a0759a49, type: 3}
-  _horizontalForce: 0
-  _verticalForce: 0
+  _horizontalForce: 10
+  _verticalForce: 10
 --- !u!114 &173710551061041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
