@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIscript : MonoBehaviour
 {
-    [SerializeField] Text _ballText;
-    [SerializeField] Text _scoreText;
+    [SerializeField] TMP_Text _ballText;
+    [SerializeField] TMP_Text _scoreText;
 
     public void UpdateBallText(int numberBalls)
     {
