@@ -52,6 +52,10 @@ MonoBehaviour:
   _inputLaunch: {fileID: -549412763989558617, guid: 12481981812f17449beb87b7a0759a49, type: 3}
   _horizontalForce: 10
   _verticalForce: 10
+  _currentPower: 0
+  _powerSizeFactor: 1.5
+  _powerHorizontalForce: 20
+  _powerVerticalForce: 20
 --- !u!114 &173710551061041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
