@@ -41,6 +41,11 @@ public class CanonScript : MonoBehaviour
         BallManager.OnNoBalls += StopPlaying;
     }
 
+    private void Start()
+    {
+        UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
+    }
+
     private void Update()
     {
         //projection de la balle
@@ -50,6 +55,7 @@ public class CanonScript : MonoBehaviour
             _canShoot = false;
             _onFire.Invoke();
             BallManager.instance.ballsRemaining--;
+            UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
 
             GameObject ball = Instantiate(_ballPrefab, _ballSpawningPoint.position, Quaternion.identity);
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
