@@ -22,7 +22,21 @@ public class PegsBehavior : MonoBehaviour
 
     private void DestructPeggle()
     {
+
         Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        if( _hasBeenTouched)
+        {
+            BallScript.OnFallen += DestructPeggle;
+        }
+    }
+
+    private void OnDisable()
+    {
+        BallScript.OnFallen -= DestructPeggle;
     }
 
     // Start is called before the first frame update
@@ -47,7 +61,6 @@ public class PegsBehavior : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Debug.Log("stay");
         if(collision.gameObject.CompareTag("Balle") && _hasBeenTouched)
         {
             _currentPreDestructionTime += Time.deltaTime;
