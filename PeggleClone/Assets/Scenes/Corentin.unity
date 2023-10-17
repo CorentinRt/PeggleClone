@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d24f87616aa3749b739222f0e393dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _numberToDestroy: 5
 --- !u!1 &1047344919
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,9 +628,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 874938159}
   - {fileID: 1306384691}
   - {fileID: 259496509342199993}
   - {fileID: 1047344923}
   - {fileID: 4917113633837974664}
   - {fileID: 9126364723812536136}
-  - {fileID: 874938159}

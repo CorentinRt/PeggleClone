@@ -6,12 +6,15 @@ public class GameManager : MonoBehaviour
 {
     // Fields
 
+    private static GameManager _instance;
+
     [Header("Win Concdition")]
     [SerializeField] private int _numberToDestroy;
     private bool _hasWin;
 
     // Properties
     public int NumberToDestroy { get => _numberToDestroy; set => _numberToDestroy = value; }
+    public static GameManager Instance { get => _instance; set => _instance = value; }
 
 
     // Methods
@@ -19,11 +22,14 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You won !");
     }
-
+    private void Awake()
+    {
+        _instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
