@@ -76,7 +76,6 @@ public class PegsBehavior : MonoBehaviour
         }
 
         _gameManager = GameManager.Instance;
-        Debug.Log(_gameManager);
     }
 
     // Update is called once per frame
