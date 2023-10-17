@@ -5,15 +5,23 @@ using UnityEngine;
 public class PegsBehavior : MonoBehaviour
 {
     // Fields
+    [Header("Specificité")]
+    private bool _isImportant;
+
     [Header("Gestion collision")]
     [SerializeField] private bool _hasBeenTouched;
 
     [SerializeField] private float _preDestructionTime;
-    [SerializeField] private float _currentPreDestructionTime;
+    private float _currentPreDestructionTime;
 
     [Header("Gestion Visual")]
     [SerializeField] private Sprite _normalSprite;
-    [SerializeField] private Sprite _spriteTouched;
+    [SerializeField] private Sprite _normalSpriteTouched;
+    [SerializeField] private Sprite _importantSprite;
+    [SerializeField] private Sprite _importantSpriteTouched;
+
+    private Sprite _currentSprite;
+    private Sprite _currentSpriteTouched;
 
     // Properties
 
@@ -43,6 +51,16 @@ public class PegsBehavior : MonoBehaviour
     void Start()
     {
         _hasBeenTouched = false;
+        if (_isImportant)
+        {
+            _currentSprite = _importantSprite;
+            _currentSpriteTouched = _importantSpriteTouched;
+        }
+        else
+        {
+            _currentSprite = _normalSprite;
+            _currentSpriteTouched = _normalSpriteTouched;
+        }
     }
 
     // Update is called once per frame

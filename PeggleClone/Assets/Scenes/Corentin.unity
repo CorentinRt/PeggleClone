@@ -460,10 +460,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PegCircle
       objectReference: {fileID: 0}
-    - target: {fileID: 7628727155012910249, guid: fddf471dd4c143a48955211be1f2813a, type: 3}
-      propertyPath: _preDestructionTime
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -517,10 +513,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7222906689635349190, guid: 5a162d692ea8481409e38498042aaedc, type: 3}
-      propertyPath: _preDestructionTime
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7572675239235232180, guid: 5a162d692ea8481409e38498042aaedc, type: 3}
       propertyPath: m_Name
       value: PegRectangle
@@ -530,6 +522,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a162d692ea8481409e38498042aaedc, type: 3}
+--- !u!1001 &9126364723812536136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6070913295045564533, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720512550898621586, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
+      propertyPath: m_Name
+      value: PegArrondi
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4ed1b890cd45c144a9a35b688a3430a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -538,3 +587,4 @@ SceneRoots:
   - {fileID: 259496509342199993}
   - {fileID: 1047344923}
   - {fileID: 4917113633837974664}
+  - {fileID: 9126364723812536136}

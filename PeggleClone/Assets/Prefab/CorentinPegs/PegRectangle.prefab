@@ -148,5 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hasBeenTouched: 0
+  _preDestructionTime: 5
+  _currentPreDestructionTime: 0
   _normalSprite: {fileID: 0}
   _spriteTouched: {fileID: 0}
