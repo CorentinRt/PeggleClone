@@ -10,5 +10,6 @@ public class BallScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnFallen();
+        Destroy(gameObject);
     }
 }
