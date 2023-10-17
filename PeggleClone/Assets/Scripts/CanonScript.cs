@@ -36,9 +36,8 @@ public class CanonScript : MonoBehaviour
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
             ballRB2D.velocity = new Vector2(_currentDirection.x * _horizontalForce, _currentDirection.y * _verticalForce);
         }
-
-        print(_currentDirection);
     }
+
     void FixedUpdate()
     {
         if (_isPlaying)
@@ -52,6 +51,13 @@ public class CanonScript : MonoBehaviour
 
             Quaternion playerRotation = Quaternion.Euler(new Vector3(0f, 0f, angle - 270f));
             transform.rotation = Quaternion.Lerp(transform.rotation, playerRotation, 1f);
+
+
+            float currentroation = transform.eulerAngles.z;
+            print(currentroation);
+            if (currentroation < 180f) transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(currentroation, 0f, 90f));
+            else transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(currentroation, 270f, 360f));
+
         }
     }
 
