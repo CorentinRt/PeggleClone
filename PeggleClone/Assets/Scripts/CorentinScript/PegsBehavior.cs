@@ -14,6 +14,9 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private float _preDestructionTime;
     private float _currentPreDestructionTime;
 
+    [Header("Gestion victoire")]
+    [SerializeField] private GameManager _gameManager;
+
     [Header("Gestion Visual")]
     [SerializeField] private Sprite _normalSprite;
     [SerializeField] private Sprite _normalSpriteTouched;
@@ -30,6 +33,7 @@ public class PegsBehavior : MonoBehaviour
 
     private void DestructPeggle()
     {
+        _gameManager.NumberToDestroy--;
 
         Destroy(gameObject);
     }
