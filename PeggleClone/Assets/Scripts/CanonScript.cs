@@ -27,7 +27,7 @@ public class CanonScript : MonoBehaviour
     [SerializeField][Range(0, 100f)] float _powerHorizontalForce;
     [SerializeField][Range(0, 100f)] float _powerVerticalForce;
     bool _activePower = false;
-    bool _powerAvailable = false;
+    bool _powerAvailable = true;
 
     public PowerList currentPower { get => _currentPower; set => _currentPower = value; }
     public bool powerAvailable { get => _powerAvailable; set => _powerAvailable = value; }
@@ -67,6 +67,8 @@ public class CanonScript : MonoBehaviour
                         break;
                 }
             }
+
+            _activePower = false;
         }
 
         //Activation du pouvoir
