@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
-    [Header("Win Concdition")]
+    [Header("Win Condition")]
     [SerializeField] private int _numberToDestroy;
     private bool _hasWin;
+
+    [Header("Gestion points")]
+    [SerializeField] private int _totalPoints;
 
     // Properties
     public int NumberToDestroy { get => _numberToDestroy; set => _numberToDestroy = value; }
@@ -21,6 +24,10 @@ public class GameManager : MonoBehaviour
     private void Victory()
     {
         Debug.Log("You won !");
+    }
+    public void AddPoints(int points)
+    {
+        _totalPoints += points;
     }
     private void Awake()
     {

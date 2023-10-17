@@ -17,6 +17,9 @@ public class PegsBehavior : MonoBehaviour
     [Header("Gestion victoire")]
     [SerializeField] private GameManager _gameManager;
 
+    [Header("Points")]
+    [SerializeField] private int _pointsValue;
+
     [Header("Gestion Visual")]
     [SerializeField] private Sprite _normalSprite;
     [SerializeField] private Sprite _normalSpriteTouched;
@@ -34,6 +37,8 @@ public class PegsBehavior : MonoBehaviour
     private void DestructPeggle()
     {
         _gameManager.NumberToDestroy--;
+
+        _gameManager.AddPoints(_pointsValue);
 
         Destroy(gameObject);
     }
@@ -57,11 +62,15 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
+            _pointsValue = 100;
+
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
+            _pointsValue = 50;
+
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
         }
