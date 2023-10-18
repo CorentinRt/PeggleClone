@@ -31,6 +31,9 @@ public class PegsBehavior : MonoBehaviour
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
     [SerializeField] private ParticleSystem _explosionParticles2;
+    private ParticleSystem _pointsParticles;
+    [SerializeField] private ParticleSystem _pointsParticles1000;
+    [SerializeField] private ParticleSystem _pointsParticles2000;
 
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private float _initialPitch;
@@ -62,9 +65,11 @@ public class PegsBehavior : MonoBehaviour
             // Explosions particles
             ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
             ParticleSystem currentExplosion2 = Instantiate(_explosionParticles2, transform.position, Quaternion.identity);
+            ParticleSystem currentPoints = Instantiate(_pointsParticles, transform.position, Quaternion.identity);
 
             currentExplosion.Play();
             currentExplosion2.Play();
+            currentPoints.Play();
 
             // Points and importantPegglesCount
             _gameManager.NumberToDestroy--;
@@ -81,7 +86,13 @@ public class PegsBehavior : MonoBehaviour
 
     public void PeggleHit()
     {
-        Debug.Log(_audioManager.GetComponent<AudioSource>());
+        // Change the sprite
+        if (_currentSpriteTouched != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSpriteTouched;
+        }
+
+        // Make the sound more high
         _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
         _audioManager.PlayHitSound();
     }
@@ -104,6 +115,7 @@ public class PegsBehavior : MonoBehaviour
         if (_isImportant)
         {
             _pointsValue = 2000;
+            _pointsParticles = _pointsParticles2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
@@ -111,9 +123,14 @@ public class PegsBehavior : MonoBehaviour
         else
         {
             _pointsValue = 1000;
+            _pointsParticles = _pointsParticles1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
+        }
+        if (_currentSprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSprite;
         }
 
         _gameManager = GameManager.Instance;
