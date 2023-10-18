@@ -31,6 +31,9 @@ public class PegsBehavior : MonoBehaviour
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
     [SerializeField] private ParticleSystem _explosionParticles2;
+    private ParticleSystem _pointsParticles;
+    [SerializeField] private ParticleSystem _pointsParticles1000;
+    [SerializeField] private ParticleSystem _pointsParticles2000;
 
     [SerializeField] private AudioManager _audioManager;
     [SerializeField] private float _initialPitch;
@@ -104,6 +107,7 @@ public class PegsBehavior : MonoBehaviour
         if (_isImportant)
         {
             _pointsValue = 2000;
+            _pointsParticles = _pointsParticles2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
@@ -111,6 +115,7 @@ public class PegsBehavior : MonoBehaviour
         else
         {
             _pointsValue = 1000;
+            _pointsParticles = _pointsParticles1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;

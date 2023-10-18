@@ -159,7 +159,9 @@ MonoBehaviour:
   _importantSpriteTouched: {fileID: 0}
   _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
   _explosionParticles2: {fileID: 444097701105449007, guid: c4566bda0810c7f4c9b4cec6553bd632, type: 3}
-  _audioSource: {fileID: 0}
+  _pointsParticles1000: {fileID: 444097701105449007, guid: 93899ab08cc7dae4497820d633d0b6ad, type: 3}
+  _pointsParticles2000: {fileID: 444097701105449007, guid: 7773775b1647d4c47b464cf552568c2a, type: 3}
+  _audioManager: {fileID: 0}
   _initialPitch: 1
   _pitchGap: 0.2
   OnHit:
