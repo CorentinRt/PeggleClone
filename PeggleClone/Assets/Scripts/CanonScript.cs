@@ -102,7 +102,6 @@ public class CanonScript : MonoBehaviour
 
 
             float currentroation = transform.eulerAngles.z;
-            print(currentroation);
             if (currentroation < 180f) transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(currentroation, 0f, 90f));
             else transform.rotation = Quaternion.Euler(0, 0, Mathf.Clamp(currentroation, 270f, 360f));
 
