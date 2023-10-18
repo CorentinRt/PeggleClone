@@ -8,12 +8,19 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
+    [SerializeField] private LoadScene _scene;
+
     [Header("Win Condition")]
     [SerializeField] private int _numberToDestroy;
     private bool _hasWin;
+    [SerializeField] private float _changeSceneCooldown;
+    [Header("Following Scene")]
+    [SerializeField] string _nextScene;
 
     [Header("Gestion points")]
     [SerializeField] private int _totalPoints;
+
+    
 
     // Properties
     public int NumberToDestroy { get => _numberToDestroy; set => _numberToDestroy = value; }
@@ -24,7 +31,10 @@ public class GameManager : MonoBehaviour
     private void Victory()
     {
         Debug.Log("You won !");
+        
+        StartCoroutine(WinCoroutine());
     }
+
     public void AddPoints(int points)
     {
         _totalPoints += points;
@@ -44,7 +54,18 @@ public class GameManager : MonoBehaviour
     {
         if (_numberToDestroy <= 0 && !_hasWin)
         {
+            _hasWin = true;
             Victory();
         }
+    }
+
+    IEnumerator WinCoroutine()
+    {
+        
+        yield return new WaitForSeconds(_changeSceneCooldown);
+
+        _scene.ChangeScene(_nextScene);
+
+        yield return null;
     }
 }

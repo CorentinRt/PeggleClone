@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d24f87616aa3749b739222f0e393dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scene: {fileID: 1005962590}
   _numberToDestroy: 5
+  _changeSceneCooldown: 5
   _nextScene: 
   _totalPoints: 0
 --- !u!1 &1005962589
