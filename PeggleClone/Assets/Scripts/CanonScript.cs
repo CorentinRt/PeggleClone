@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 
 public class CanonScript : MonoBehaviour
 {
+    public static CanonScript instance;
+
     [SerializeField] GameObject _ballPrefab;
     [SerializeField] Transform _ballSpawningPoint;
     [SerializeField] InputActionReference _inputLaunch;
@@ -27,13 +29,19 @@ public class CanonScript : MonoBehaviour
     [SerializeField][Range(0, 100f)] float _powerHorizontalForce;
     [SerializeField][Range(0, 100f)] float _powerVerticalForce;
     bool _activePower = false;
-    bool _powerAvailable = true;
+    bool _powerAvailable = false;
 
     public PowerList currentPower { get => _currentPower; set => _currentPower = value; }
     public bool powerAvailable { get => _powerAvailable; set => _powerAvailable = value; }
 
     [SerializeField] UnityEvent _onFire;
     [SerializeField] UnityEvent _onPowerActivate;
+
+    private void Awake()
+    {
+        if (instance != null) Destroy(gameObject);
+        instance = this;
+    }
 
     private void OnEnable()
     {

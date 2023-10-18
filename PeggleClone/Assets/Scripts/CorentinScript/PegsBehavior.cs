@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PegsBehavior : MonoBehaviour
 {
     // Fields
     [Header("Specificité")]
-    private bool _isImportant;
+    [SerializeField] private bool _isImportant;
+    [SerializeField] private bool _isPowerUp;
 
     [Header("Gestion collision")]
     [SerializeField] private bool _hasBeenTouched;
@@ -26,9 +28,14 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private Sprite _importantSprite;
     [SerializeField] private Sprite _importantSpriteTouched;
 
+    [Header("Gestion effets")]
+    [SerializeField] private ParticleSystem _explosionParticles;
+
     private Sprite _currentSprite;
     private Sprite _currentSpriteTouched;
 
+    [Header("Event")]
+    [SerializeField] UnityEvent OnHit;
     // Properties
 
 
@@ -38,6 +45,10 @@ public class PegsBehavior : MonoBehaviour
     {
         if (_hasBeenTouched)
         {
+            ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+
+            currentExplosion.Play();
+
             _gameManager.NumberToDestroy--;
 
             _gameManager.AddPoints(_pointsValue);
@@ -63,14 +74,14 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
-            _pointsValue = 100;
+            _pointsValue = 2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
-            _pointsValue = 50;
+            _pointsValue = 1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
@@ -89,7 +100,12 @@ public class PegsBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
         {
+            OnHit.Invoke();
             _hasBeenTouched = true;
+            if (_isPowerUp)
+            {
+                CanonScript.instance.powerAvailable = true;
+            }
         }
     }
 

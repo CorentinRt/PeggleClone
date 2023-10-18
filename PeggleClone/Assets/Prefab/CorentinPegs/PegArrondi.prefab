@@ -155,3 +155,4 @@ MonoBehaviour:
   _normalSpriteTouched: {fileID: 0}
   _importantSprite: {fileID: 0}
   _importantSpriteTouched: {fileID: 0}
+  _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
