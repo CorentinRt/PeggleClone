@@ -30,6 +30,11 @@ public class PegsBehavior : MonoBehaviour
 
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
+    [SerializeField] private ParticleSystem _explosionParticles2;
+
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private float _initialPitch;
+    [SerializeField] private float _pitchGap;
 
     private Sprite _currentSprite;
     private Sprite _currentSpriteTouched;
@@ -45,16 +50,31 @@ public class PegsBehavior : MonoBehaviour
     {
         if (_hasBeenTouched)
         {
+            // Explosions particles
             ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+            ParticleSystem currentExplosion2 = Instantiate(_explosionParticles2, transform.position, Quaternion.identity);
 
             currentExplosion.Play();
+            currentExplosion2.Play();
 
+            // Points and importantPegglesCount
             _gameManager.NumberToDestroy--;
 
             _gameManager.AddPoints(_pointsValue);
 
+            // Reset Pitch audioSource
+            _audioManager.GetComponent<AudioSource>().pitch = _initialPitch;
+
+            // Destruction
             Destroy(gameObject);
         }
+    }
+
+    public void PeggleHit()
+    {
+        Debug.Log(_audioManager.GetComponent<AudioSource>());
+        _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
+        _audioManager.PlayHitSound();
     }
 
     private void OnEnable()
@@ -88,6 +108,9 @@ public class PegsBehavior : MonoBehaviour
         }
 
         _gameManager = GameManager.Instance;
+
+        // _audioManager = AudioManager.Instance;
+        
     }
 
     // Update is called once per frame
