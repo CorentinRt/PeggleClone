@@ -45,6 +45,15 @@ public class PegsBehavior : MonoBehaviour
 
 
     // Methods
+    private void Hit()
+    {
+        OnHit.Invoke();
+        _hasBeenTouched = true;
+        if (_isPowerUp)
+        {
+            CanonScript.instance.powerAvailable = true;
+        }
+    }
 
     private void DestructPeggle()
     {
@@ -113,23 +122,15 @@ public class PegsBehavior : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        print(collision.name);
+        if (collision.name == "ProxiTrigger") Hit();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
-        {
-            OnHit.Invoke();
-            _hasBeenTouched = true;
-            if (_isPowerUp)
-            {
-                CanonScript.instance.powerAvailable = true;
-            }
-        }
+        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched) Hit();
     }
 
     private void OnCollisionStay2D(Collision2D collision)

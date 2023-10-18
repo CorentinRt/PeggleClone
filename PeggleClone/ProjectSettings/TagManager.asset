@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Balle
   - Peggle
+  - endTrigger
   layers:
   - Default
   - TransparentFX
