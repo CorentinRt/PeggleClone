@@ -83,6 +83,8 @@ public class CanonScript : MonoBehaviour
                         ball.GetComponent<BallScript>().activateProxi = true;
                         break;
                 }
+
+                powerAvailable = false;
             }
 
             _activePower = false;
