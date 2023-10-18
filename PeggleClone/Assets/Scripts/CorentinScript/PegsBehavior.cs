@@ -55,6 +55,7 @@ public class PegsBehavior : MonoBehaviour
         if (_isPowerUp)
         {
             CanonScript.instance.powerAvailable = true;
+            UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
         }
     }
 
