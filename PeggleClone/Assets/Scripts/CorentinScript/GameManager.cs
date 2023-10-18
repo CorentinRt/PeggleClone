@@ -44,7 +44,11 @@ public class GameManager : MonoBehaviour
     }
     private void Lose()
     {
-        Debug.Log("You lost !");
+        if (_noMoreBall)
+        {
+            Debug.Log("You lost !");
+
+        }
     }
 
     public void AddPoints(int points)
@@ -59,6 +63,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         BallManager.OnNoBalls += hasNoMoreBall;
+        BallScript.OnFallen += Lose;
     }
     
     // Start is called before the first frame update
@@ -75,6 +80,7 @@ public class GameManager : MonoBehaviour
             _hasWin = true;
             Victory();
         }
+        
     }
 
     IEnumerator WinCoroutine()
