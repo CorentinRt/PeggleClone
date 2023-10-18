@@ -9,6 +9,7 @@ public class UIScript : MonoBehaviour
 
     [SerializeField] TMP_Text _ballText;
     [SerializeField] TMP_Text _scoreText;
+    [SerializeField] UIPowerUpGauge _powerUpGauge;
 
     private void Awake()
     {
