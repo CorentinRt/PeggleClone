@@ -86,7 +86,13 @@ public class PegsBehavior : MonoBehaviour
 
     public void PeggleHit()
     {
-        Debug.Log(_audioManager.GetComponent<AudioSource>());
+        // Change the sprite
+        if (_currentSpriteTouched != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSpriteTouched;
+        }
+
+        // Make the sound more high
         _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
         _audioManager.PlayHitSound();
     }
@@ -121,6 +127,10 @@ public class PegsBehavior : MonoBehaviour
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
+        }
+        if (_currentSprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSprite;
         }
 
         _gameManager = GameManager.Instance;

@@ -167,7 +167,7 @@ MonoBehaviour:
   OnHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7628727155012910249, guid: fddf471dd4c143a48955211be1f2813a, type: 3}
+      - m_Target: {fileID: 6409948578733898060}
         m_TargetAssemblyTypeName: PegsBehavior, Assembly-CSharp
         m_MethodName: PeggleHit
         m_Mode: 1
