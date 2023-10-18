@@ -36,19 +36,20 @@ public class PegsBehavior : MonoBehaviour
 
     private void DestructPeggle()
     {
-        _gameManager.NumberToDestroy--;
+        if (_hasBeenTouched)
+        {
+            _gameManager.NumberToDestroy--;
 
-        _gameManager.AddPoints(_pointsValue);
+            _gameManager.AddPoints(_pointsValue);
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
     {
-        if( _hasBeenTouched)
-        {
-            BallScript.OnFallen += DestructPeggle;
-        }
+        BallScript.OnFallen += DestructPeggle;
+
     }
 
     private void OnDisable()
