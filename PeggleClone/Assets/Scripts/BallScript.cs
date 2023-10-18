@@ -7,8 +7,9 @@ public class BallScript : MonoBehaviour
     public delegate void Fallen();
     public static event Fallen OnFallen;
 
-    bool _proxi;
-    public bool activateProxi {  get => _proxi; set => _proxi = value; }
+    [SerializeField] GameObject _proxiTrigger;
+    public bool activateProxi {  get => _proxiTrigger.activeSelf; set => _proxiTrigger.SetActive(value); }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
