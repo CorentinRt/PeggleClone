@@ -11,6 +11,12 @@ public class AudioManager : MonoBehaviour
 
     [Header("Tous les sons du jeu")]
     [SerializeField] private AudioClip _hitClip;
+    [SerializeField] private AudioClip _powerReady;
+    [SerializeField] private AudioClip _powerShot;
+    [SerializeField] private AudioClip _shotBall;
+    [SerializeField] private AudioClip _lostBall;
+    [SerializeField] private AudioClip _musicMenu;
+    [SerializeField] private AudioClip _levelMenu;
 
     
 
@@ -21,8 +27,23 @@ public class AudioManager : MonoBehaviour
     // Methods
     public void PlayHitSound()
     {
-        Debug.Log("hit sound");
         _source.PlayOneShot(_hitClip);
+    }
+    public void PlayPowerReadySound()
+    {
+        _source.PlayOneShot(_powerReady);
+    }
+    public void PlayPowerShotSound()
+    {
+        _source.PlayOneShot(_powerShot);
+    }
+    public void PlayShotBallSound()
+    {
+        _source.PlayOneShot(_shotBall);
+    }
+    public void PlayLostBallSound()
+    {
+        _source.PlayOneShot(_lostBall);
     }
 
     private void Awake()
