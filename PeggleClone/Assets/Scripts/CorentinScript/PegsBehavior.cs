@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PegsBehavior : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private Sprite _importantSprite;
     [SerializeField] private Sprite _importantSpriteTouched;
 
+    [Header("Gestion effets")]
+    [SerializeField] private ParticleSystem _explosionParticles;
+
     private Sprite _currentSprite;
     private Sprite _currentSpriteTouched;
 
@@ -38,6 +42,10 @@ public class PegsBehavior : MonoBehaviour
     {
         if (_hasBeenTouched)
         {
+            ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+
+            currentExplosion.Play();
+
             _gameManager.NumberToDestroy--;
 
             _gameManager.AddPoints(_pointsValue);
@@ -63,14 +71,14 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
-            _pointsValue = 100;
+            _pointsValue = 2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
-            _pointsValue = 50;
+            _pointsValue = 1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
