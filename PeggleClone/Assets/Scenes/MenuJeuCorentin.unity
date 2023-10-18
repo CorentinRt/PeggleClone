@@ -409,7 +409,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 267672261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 452717238}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: PressPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &267672261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +593,7 @@ GameObject:
   - component: {fileID: 452717236}
   - component: {fileID: 452717235}
   - component: {fileID: 452717234}
+  - component: {fileID: 452717238}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -672,6 +685,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &452717238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452717233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf035c68379f694783d2f70ffad5ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firstMenuPanel: {fileID: 1228054347}
+  _secondMenuPanel: {fileID: 956483507}
+  _loadScene: {fileID: 1507468248}
 --- !u!1 &737161155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1250527217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 452717238}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: PressQuit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1250527217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,6 +1356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1507468247}
+  - component: {fileID: 1507468248}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1338,6 +1379,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1507468248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507468246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d74deb99bf0c8547a3839ca133bf7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627535255
 GameObject:
   m_ObjectHideFlags: 0
