@@ -93,6 +93,7 @@ public class CanonScript : MonoBehaviour
         if(powerInput && _isPlaying && !_activePower && powerAvailable)
         {
             _activePower = true;
+            UIScript.instance.powerUpGauge.StartGaugeAnimation(false);
             _onPowerActivate.Invoke();
         }
     }
