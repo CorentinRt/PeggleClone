@@ -25,6 +25,8 @@ public class Menu : MonoBehaviour
     public void ChooseCharacter(string character)
     {
         // Faire choix des personnages
+        PlayerPrefs.SetString("character", character);
+        _loadScene.ChangeScene("GameScene");
     }
 
     void Start()
