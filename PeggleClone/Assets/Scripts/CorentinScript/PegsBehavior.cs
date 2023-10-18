@@ -65,9 +65,11 @@ public class PegsBehavior : MonoBehaviour
             // Explosions particles
             ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
             ParticleSystem currentExplosion2 = Instantiate(_explosionParticles2, transform.position, Quaternion.identity);
+            ParticleSystem currentPoints = Instantiate(_pointsParticles, transform.position, Quaternion.identity);
 
             currentExplosion.Play();
             currentExplosion2.Play();
+            currentPoints.Play();
 
             // Points and importantPegglesCount
             _gameManager.NumberToDestroy--;
