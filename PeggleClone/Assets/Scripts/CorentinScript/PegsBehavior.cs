@@ -63,14 +63,14 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
-            _pointsValue = 100;
+            _pointsValue = 2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
-            _pointsValue = 50;
+            _pointsValue = 1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
