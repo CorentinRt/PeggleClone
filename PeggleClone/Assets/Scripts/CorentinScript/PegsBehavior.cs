@@ -102,6 +102,10 @@ public class PegsBehavior : MonoBehaviour
         {
             OnHit.Invoke();
             _hasBeenTouched = true;
+            if (_isPowerUp)
+            {
+                CanonScript.instance.powerAvailable = true;
+            }
         }
     }
 
