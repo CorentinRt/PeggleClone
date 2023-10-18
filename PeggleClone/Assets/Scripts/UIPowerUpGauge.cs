@@ -31,11 +31,11 @@ public class UIPowerUpGauge : MonoBehaviour
     {
         _slider.value = 1f;
 
-        float timeElapsed = 1;
-        while (timeElapsed > duration)
+        float timeElapsed = 0;
+        while (timeElapsed < duration)
         {
-            _slider.value = timeElapsed / duration;
-            timeElapsed -= Time.deltaTime;
+            _slider.value = 1 - timeElapsed / duration;
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
 
