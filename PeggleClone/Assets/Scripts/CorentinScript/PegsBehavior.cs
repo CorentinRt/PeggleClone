@@ -7,7 +7,8 @@ public class PegsBehavior : MonoBehaviour
 {
     // Fields
     [Header("Specificité")]
-    private bool _isImportant;
+    [SerializeField] private bool _isImportant;
+    [SerializeField] private bool _isPowerUp;
 
     [Header("Gestion collision")]
     [SerializeField] private bool _hasBeenTouched;
@@ -33,6 +34,8 @@ public class PegsBehavior : MonoBehaviour
     private Sprite _currentSprite;
     private Sprite _currentSpriteTouched;
 
+    [Header("Event")]
+    [SerializeField] UnityEvent OnHit;
     // Properties
 
 
@@ -97,6 +100,7 @@ public class PegsBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
         {
+            OnHit.Invoke();
             _hasBeenTouched = true;
         }
     }
