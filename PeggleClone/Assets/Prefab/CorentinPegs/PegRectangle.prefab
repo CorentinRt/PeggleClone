@@ -148,7 +148,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hasBeenTouched: 0
-  _preDestructionTime: 5
-  _currentPreDestructionTime: 0
+  _preDestructionTime: 2
+  _gameManager: {fileID: 0}
+  _pointsValue: 0
   _normalSprite: {fileID: 0}
-  _spriteTouched: {fileID: 0}
+  _normalSpriteTouched: {fileID: 0}
+  _importantSprite: {fileID: 0}
+  _importantSpriteTouched: {fileID: 0}
