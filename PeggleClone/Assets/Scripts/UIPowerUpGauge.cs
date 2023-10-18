@@ -7,38 +7,23 @@ public class UIPowerUpGauge : MonoBehaviour
     [SerializeField] Slider _slider;
     [SerializeField] float _duration;
 
-    public void StartGaugeAnimation(bool Fill)
-    {
-        if (Fill) StartCoroutine(GaugeAnimationFill(_duration));
-        else StartCoroutine(GaugeAnimationDepleate(_duration));
-    }
+    public void StartGaugeAnimation(bool Fill) => StartCoroutine(GaugeAnimation(_duration, Fill ? 1 : 0));
+    // 1 = Fill
+    // 0 = De-fill
 
-    IEnumerator GaugeAnimationFill(float duration)
+    IEnumerator GaugeAnimation(float duration, int direction)
     {
-        _slider.value = 0;
+        _slider.value = 1 - direction;
 
         float timeElapsed = 0;
         while (timeElapsed < duration)
         {
-            _slider.value = timeElapsed / duration;
+            _slider.value = Mathf.Abs(1 - direction - timeElapsed / duration);
+            
             timeElapsed += Time.deltaTime;
             yield return null;
         }
 
-        _slider.value = 1f;
-    }
-    IEnumerator GaugeAnimationDepleate(float duration)
-    {
-        _slider.value = 1f;
-
-        float timeElapsed = 0;
-        while (timeElapsed < duration)
-        {
-            _slider.value = 1 - timeElapsed / duration;
-            timeElapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        _slider.value = 0f;
+        _slider.value = direction;
     }
 }
