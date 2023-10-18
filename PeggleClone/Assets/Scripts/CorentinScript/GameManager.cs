@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
 
+    [Header("Lose Condition")]
+    [SerializeField] private bool _noMoreBall;
+
     [Header("Gestion points")]
     [SerializeField] private int _totalPoints;
 
@@ -35,6 +38,15 @@ public class GameManager : MonoBehaviour
         StartCoroutine(WinCoroutine());
     }
 
+    private void hasNoMoreBall()
+    {
+        _noMoreBall = true;
+    }
+    private void Lose()
+    {
+        Debug.Log("You lost !");
+    }
+
     public void AddPoints(int points)
     {
         _totalPoints += points;
@@ -43,6 +55,12 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
     }
+
+    private void OnEnable()
+    {
+        BallManager.OnNoBalls += hasNoMoreBall;
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
