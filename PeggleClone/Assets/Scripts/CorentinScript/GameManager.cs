@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +15,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _numberToDestroy;
     private bool _hasWin;
     [SerializeField] private float _changeSceneCooldown;
+
+    [SerializeField] private ParticleSystem _winParticle1;
+    [SerializeField] private ParticleSystem _winParticle2;
+    [SerializeField] private UnityEvent _victoryEvent;
+
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
+    [SerializeField] string _currentScene;
 
     [Header("Lose Condition")]
     [SerializeField] private bool _noMoreBall;
@@ -35,6 +42,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("You won !");
         
+        _victoryEvent.Invoke();
+
         StartCoroutine(WinCoroutine());
     }
 
@@ -48,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You lost !");
 
+            StartCoroutine(LoseCoroutine());
         }
     }
 
@@ -89,6 +99,15 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(_changeSceneCooldown);
 
         _scene.ChangeScene(_nextScene);
+
+        yield return null;
+    }
+
+    IEnumerator LoseCoroutine()
+    {
+        yield return new WaitForSeconds(_changeSceneCooldown);
+
+        _scene.ChangeScene(_currentScene);
 
         yield return null;
     }

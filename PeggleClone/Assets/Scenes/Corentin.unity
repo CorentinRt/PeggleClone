@@ -123,6 +123,116 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &144239074
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_Name
+      value: Victory Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.1830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.1830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &144239075 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+  m_PrefabInstance: {fileID: 144239074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &874938158
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,8 +279,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scene: {fileID: 1005962590}
   _numberToDestroy: 5
+  _hasWin: 0
   _changeSceneCooldown: 5
+  _winParticle1: {fileID: 0}
+  _winParticle2: {fileID: 0}
+  _victoryParticles:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 144239075}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5095866200536857147}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _nextScene: 
+  _currentScene: 
+  _noMoreBall: 0
   _totalPoints: 0
 --- !u!1 &1005962589
 GameObject:
@@ -881,6 +1023,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a162d692ea8481409e38498042aaedc, type: 3}
+--- !u!1001 &5095866200536857146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_Name
+      value: Victory Particles 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6830127
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.18301275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113951873787711543, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &5095866200536857147 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+  m_PrefabInstance: {fileID: 5095866200536857146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9126364723812536136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -958,3 +1162,5 @@ SceneRoots:
   - {fileID: 9126364723812536136}
   - {fileID: 1242604010}
   - {fileID: 1005962591}
+  - {fileID: 144239074}
+  - {fileID: 5095866200536857146}
