@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent _loseEvent;
     [SerializeField] private TextMeshProUGUI _loseText;
     [SerializeField] private RectTransform _loseTextCenterPosition;
+    [SerializeField] private Image _losePanel;
+
+    [SerializeField] bool _hasLose;
 
     [Header("Gestion points")]
     [SerializeField] private int _totalPoints;
@@ -95,6 +98,12 @@ public class GameManager : MonoBehaviour
             _hasWin = true;
             Victory();
         }
+
+        if(_hasLose)
+        {
+            _hasLose = false;
+            Lose();
+        }
     }
 
     IEnumerator WinCoroutine()
@@ -130,6 +139,13 @@ public class GameManager : MonoBehaviour
             currentYPosition = Mathf.Lerp(currentYPosition, _loseTextCenterPosition.transform.position.y, Time.deltaTime);
 
             _loseText.rectTransform.position = new Vector3(_loseText.rectTransform.position.x, currentYPosition, _loseText.rectTransform.position.z);
+
+            Color color = _losePanel.color;
+
+            color.a = Mathf.Lerp(color.a, 1f, Time.deltaTime);
+            Debug.Log(color.a);
+
+            _losePanel.color = color;
 
             yield return null;
         }
