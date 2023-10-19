@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd3b6bacb3ab7c443852a4cfa5490498, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,7 +122,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -153,9 +153,9 @@ MonoBehaviour:
   _preDestructionTime: 2
   _gameManager: {fileID: 0}
   _pointsValue: 0
-  _normalSprite: {fileID: 0}
+  _normalSprite: {fileID: 21300000, guid: bd3b6bacb3ab7c443852a4cfa5490498, type: 3}
   _normalSpriteTouched: {fileID: 0}
-  _importantSprite: {fileID: 0}
+  _importantSprite: {fileID: 21300000, guid: 8c095f7dddce038478d3ca71c0b3539b, type: 3}
   _importantSpriteTouched: {fileID: 0}
   _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
   _explosionParticles2: {fileID: 444097701105449007, guid: c4566bda0810c7f4c9b4cec6553bd632, type: 3}
