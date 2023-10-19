@@ -21,7 +21,7 @@ public class CanonScript : MonoBehaviour
     [SerializeField] [Range(0,100f)]  float _horizontalForce;
     [SerializeField] [Range(0,100f)]  float _verticalForce;
 
-    public enum PowerList { SIZE, FORCE};
+    public enum PowerList { SIZE, FORCE, PROXI};
     [Header("Powers")]
     [SerializeField] PowerList _currentPower;
     [Space(3)]
@@ -79,7 +79,12 @@ public class CanonScript : MonoBehaviour
                     case PowerList.FORCE:
                         ballRB2D.velocity = new Vector2(_currentDirection.x * _powerHorizontalForce, _currentDirection.y * _powerVerticalForce);
                         break;
+                    case PowerList.PROXI:
+                        ball.GetComponent<BallScript>().activateProxi = true;
+                        break;
                 }
+
+                powerAvailable = false;
             }
 
             _activePower = false;
@@ -90,6 +95,7 @@ public class CanonScript : MonoBehaviour
         if(powerInput && _isPlaying && !_activePower && powerAvailable)
         {
             _activePower = true;
+            UIScript.instance.powerUpGauge.StartGaugeAnimation(false);
             _onPowerActivate.Invoke();
         }
     }

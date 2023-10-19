@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a3c2bbf73703840a7612169512b5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isImportant: 0
+  _isPowerUp: 0
   _hasBeenTouched: 0
   _preDestructionTime: 2
   _gameManager: {fileID: 0}
@@ -142,3 +144,24 @@ MonoBehaviour:
   _importantSprite: {fileID: 0}
   _importantSpriteTouched: {fileID: 0}
   _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
+  _explosionParticles2: {fileID: 444097701105449007, guid: c4566bda0810c7f4c9b4cec6553bd632, type: 3}
+  _pointsParticles1000: {fileID: 444097701105449007, guid: 93899ab08cc7dae4497820d633d0b6ad, type: 3}
+  _pointsParticles2000: {fileID: 444097701105449007, guid: 7773775b1647d4c47b464cf552568c2a, type: 3}
+  _audioManager: {fileID: 0}
+  _initialPitch: 1
+  _pitchGap: 0.2
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7628727155012910249}
+        m_TargetAssemblyTypeName: PegsBehavior, Assembly-CSharp
+        m_MethodName: PeggleHit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

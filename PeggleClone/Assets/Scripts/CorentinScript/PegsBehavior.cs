@@ -30,6 +30,14 @@ public class PegsBehavior : MonoBehaviour
 
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
+    [SerializeField] private ParticleSystem _explosionParticles2;
+    private ParticleSystem _pointsParticles;
+    [SerializeField] private ParticleSystem _pointsParticles1000;
+    [SerializeField] private ParticleSystem _pointsParticles2000;
+
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private float _initialPitch;
+    [SerializeField] private float _pitchGap;
 
     private Sprite _currentSprite;
     private Sprite _currentSpriteTouched;
@@ -40,21 +48,54 @@ public class PegsBehavior : MonoBehaviour
 
 
     // Methods
+    private void Hit()
+    {
+        OnHit.Invoke();
+        _hasBeenTouched = true;
+        if (_isPowerUp)
+        {
+            CanonScript.instance.powerAvailable = true;
+            UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
+        }
+    }
 
     private void DestructPeggle()
     {
         if (_hasBeenTouched)
         {
+            // Explosions particles
             ParticleSystem currentExplosion = Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+            ParticleSystem currentExplosion2 = Instantiate(_explosionParticles2, transform.position, Quaternion.identity);
+            ParticleSystem currentPoints = Instantiate(_pointsParticles, transform.position, Quaternion.identity);
 
             currentExplosion.Play();
+            currentExplosion2.Play();
+            currentPoints.Play();
 
+            // Points and importantPegglesCount
             _gameManager.NumberToDestroy--;
 
             _gameManager.AddPoints(_pointsValue);
 
+            // Reset Pitch audioSource
+            _audioManager.GetComponent<AudioSource>().pitch = _initialPitch;
+
+            // Destruction
             Destroy(gameObject);
         }
+    }
+
+    public void PeggleHit()
+    {
+        // Change the sprite
+        if (_currentSpriteTouched != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSpriteTouched;
+        }
+
+        // Make the sound more high
+        _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
+        _audioManager.PlayHitSound();
     }
 
     private void OnEnable()
@@ -75,6 +116,7 @@ public class PegsBehavior : MonoBehaviour
         if (_isImportant)
         {
             _pointsValue = 2000;
+            _pointsParticles = _pointsParticles2000;
 
             _currentSprite = _importantSprite;
             _currentSpriteTouched = _importantSpriteTouched;
@@ -82,31 +124,30 @@ public class PegsBehavior : MonoBehaviour
         else
         {
             _pointsValue = 1000;
+            _pointsParticles = _pointsParticles1000;
 
             _currentSprite = _normalSprite;
             _currentSpriteTouched = _normalSpriteTouched;
         }
+        if (_currentSprite != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = _currentSprite;
+        }
 
         _gameManager = GameManager.Instance;
+
+        // _audioManager = AudioManager.Instance;
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.name == "ProxiTrigger") Hit();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
-        {
-            OnHit.Invoke();
-            _hasBeenTouched = true;
-            if (_isPowerUp)
-            {
-                CanonScript.instance.powerAvailable = true;
-            }
-        }
+        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched) Hit();
     }
 
     private void OnCollisionStay2D(Collision2D collision)
