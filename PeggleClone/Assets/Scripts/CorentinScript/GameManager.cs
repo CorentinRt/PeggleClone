@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent _victoryEvent;
     [SerializeField] private TextMeshProUGUI _victoryText;
     [SerializeField] private RectTransform _victoryTextCenterPosition;
-    [SerializeField] private float _slideSpeed;
 
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
@@ -29,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Lose Condition")]
     [SerializeField] private bool _noMoreBall;
+    [SerializeField] private UnityEvent _loseEvent;
+    [SerializeField] private TextMeshProUGUI _loseText;
+    [SerializeField] private RectTransform _loseTextCenterPosition;
 
     [Header("Gestion points")]
     [SerializeField] private int _totalPoints;
@@ -93,7 +95,6 @@ public class GameManager : MonoBehaviour
             _hasWin = true;
             Victory();
         }
-        
     }
 
     IEnumerator WinCoroutine()
@@ -119,7 +120,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoseCoroutine()
     {
-        yield return new WaitForSeconds(_changeSceneCooldown);
+        float currentTimer = 0;
+        while (currentTimer < _changeSceneCooldown)
+        {
+            currentTimer += Time.deltaTime;
+
+            float currentYPosition = _loseText.rectTransform.position.y;
+
+            currentYPosition = Mathf.Lerp(currentYPosition, _loseTextCenterPosition.transform.position.y, Time.deltaTime);
+
+            _loseText.rectTransform.position = new Vector3(_loseText.rectTransform.position.x, currentYPosition, _loseText.rectTransform.position.z);
+
+            yield return null;
+        }
 
         _scene.ChangeScene(_currentScene);
 
