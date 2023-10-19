@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RectTransform _loseTextCenterPosition;
     [SerializeField] private Image _losePanel;
 
-    [SerializeField] bool _hasLose;
+    [SerializeField] bool _hasLose; // Only use for debug
 
     [Header("Gestion points")]
     [SerializeField] private int _totalPoints;
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
             Victory();
         }
 
-        if(_hasLose)
+        if(_hasLose)    // Only use for debug
         {
             _hasLose = false;
             Lose();
