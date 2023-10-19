@@ -3148,10 +3148,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 947122085}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
-      propertyPath: BounceMultiplier
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _currentSpecialtie
       value: 3
       objectReference: {fileID: 0}
