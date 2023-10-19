@@ -134,7 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isImportant: 0
-  _isPowerUp: 0
+  _currentSpecialtie: 0
+  BounceMultiplier: 2
   _hasBeenTouched: 0
   _preDestructionTime: 2
   _gameManager: {fileID: 0}

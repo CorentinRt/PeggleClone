@@ -8,7 +8,9 @@ public class PegsBehavior : MonoBehaviour
     // Fields
     [Header("Specificité")]
     [SerializeField] private bool _isImportant;
-    [SerializeField] private bool _isPowerUp;
+    private enum Specialties { NONE, GIVEBALL, SCORE, BOUNCE, POWER}
+    [SerializeField] private Specialties _currentSpecialtie;
+    [SerializeField] float BounceMultiplier;
 
     [Header("Gestion collision")]
     [SerializeField] private bool _hasBeenTouched;
@@ -52,10 +54,19 @@ public class PegsBehavior : MonoBehaviour
     {
         OnHit.Invoke();
         _hasBeenTouched = true;
-        if (_isPowerUp)
+        switch (_currentSpecialtie)
         {
-            CanonScript.instance.powerAvailable = true;
-            UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
+            case Specialties.POWER:
+                CanonScript.instance.powerAvailable = true;
+                UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
+                break;
+            case Specialties.SCORE:
+                GameManager.Instance.AddPoints( 2 * _pointsValue);
+                break;
+            case Specialties.GIVEBALL:
+                BallManager.instance.ballsRemaining++;
+                UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
+                break;
         }
     }
 
@@ -143,6 +154,12 @@ public class PegsBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "ProxiTrigger") Hit();
+        if (_currentSpecialtie == Specialties.BOUNCE)
+        {
+            Rigidbody2D PlayerRB = collision.GetComponent<Rigidbody2D>();
+            PlayerRB.AddForce(new Vector2(-PlayerRB.velocity.x * BounceMultiplier,
+                                             -PlayerRB.velocity.y * BounceMultiplier)); 
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

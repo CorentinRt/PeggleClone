@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int points)
     {
         _totalPoints += points;
+        UIScript.instance.UpdateScoreText(_totalPoints);
     }
     private void Awake()
     {
