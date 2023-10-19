@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,9 +18,10 @@ public class GameManager : MonoBehaviour
     private bool _hasWin;
     [SerializeField] private float _changeSceneCooldown;
 
-    [SerializeField] private ParticleSystem _winParticle1;
-    [SerializeField] private ParticleSystem _winParticle2;
     [SerializeField] private UnityEvent _victoryEvent;
+    [SerializeField] private TextMeshProUGUI _victoryText;
+    [SerializeField] private RectTransform _victoryTextCenterPosition;
+    [SerializeField] private float _slideSpeed;
 
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
@@ -95,8 +98,19 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WinCoroutine()
     {
-        
-        yield return new WaitForSeconds(_changeSceneCooldown);
+        float currentTimer = 0;
+        while(currentTimer < _changeSceneCooldown)
+        {
+            currentTimer += Time.deltaTime;
+
+            float currentYPosition = _victoryText.rectTransform.position.y;
+
+            currentYPosition = Mathf.Lerp(currentYPosition, _victoryTextCenterPosition.transform.position.y, Time.deltaTime);
+
+            _victoryText.rectTransform.position = new Vector3(_victoryText.rectTransform.position.x, currentYPosition, _victoryText.rectTransform.position.z);
+
+            yield return null;
+        }
 
         _scene.ChangeScene(_nextScene);
 
