@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b59d78656b0fea0429547ee79578d881, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,9 +139,9 @@ MonoBehaviour:
   _preDestructionTime: 2
   _gameManager: {fileID: 0}
   _pointsValue: 0
-  _normalSprite: {fileID: 0}
+  _normalSprite: {fileID: 21300000, guid: b59d78656b0fea0429547ee79578d881, type: 3}
   _normalSpriteTouched: {fileID: 0}
-  _importantSprite: {fileID: 0}
+  _importantSprite: {fileID: 21300000, guid: 8ae4fab02d6650b408453dab05bf874f, type: 3}
   _importantSpriteTouched: {fileID: 0}
   _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
   _explosionParticles2: {fileID: 444097701105449007, guid: c4566bda0810c7f4c9b4cec6553bd632, type: 3}
