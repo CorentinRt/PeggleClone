@@ -154,17 +154,20 @@ public class PegsBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "ProxiTrigger") Hit();
-        if (_currentSpecialtie == Specialties.BOUNCE)
-        {
-            Rigidbody2D PlayerRB = collision.GetComponent<Rigidbody2D>();
-            PlayerRB.AddForce(new Vector2(-PlayerRB.velocity.x * BounceMultiplier,
-                                             -PlayerRB.velocity.y * BounceMultiplier)); 
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched) Hit();
+        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
+        {
+            Hit();
+            if (_currentSpecialtie == Specialties.BOUNCE)
+            {
+                Rigidbody2D PlayerRB = collision.transform.GetComponent<Rigidbody2D>();
+                PlayerRB.velocity = (new Vector2(-PlayerRB.velocity.x * BounceMultiplier,
+                                                 -PlayerRB.velocity.y * BounceMultiplier));
+            }
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
