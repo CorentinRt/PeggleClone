@@ -14,7 +14,10 @@ public class LoadScene : MonoBehaviour
     // Methods
     public void ChangeScene(string sceneName)
     {
-        PlayerPrefs.SetInt("playerPoints", _gameManager.TotalPoints);
+        if(_gameManager != null)
+        {
+            PlayerPrefs.SetInt("playerPoints", _gameManager.TotalPoints);
+        }
 
         SceneManager.LoadScene(sceneName);
     }
