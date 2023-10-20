@@ -10,6 +10,8 @@ public class CanonScript : MonoBehaviour
 {
     public static CanonScript instance;
 
+    [SerializeField] List<Sprite> _canonSprites;
+    [SerializeField] List<Sprite> _decoPersoSprites;
     [SerializeField] GameObject _ballPrefab;
     [SerializeField] Transform _ballSpawningPoint;
     [SerializeField] InputActionReference _inputLaunch;
@@ -47,15 +49,25 @@ public class CanonScript : MonoBehaviour
 
         string _currentCharacter = "character1";
         if (PlayerPrefs.HasKey("character")) _currentCharacter = PlayerPrefs.GetString("character");
+        SpriteRenderer _sR = GetComponentInChildren<SpriteRenderer>();
         switch (_currentCharacter)
         {
             case "character1":
+                _sR.sprite = _canonSprites[0];
+                UIScript.instance.decoPerso = _decoPersoSprites[0];
+
                 _currentPower = PowerList.FORCE;
                 break;
             case "character2":
+                _sR.sprite = _canonSprites[1];
+                UIScript.instance.decoPerso = _decoPersoSprites[1];
+
                 _currentPower = PowerList.SIZE;
                 break;
             case "character3":
+                _sR.sprite = _canonSprites[2];
+                UIScript.instance.decoPerso = _decoPersoSprites[2];
+
                 _currentPower = PowerList.PROXI;
                 break;
         }

@@ -47,6 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fdf115030b43441af255bab67201bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canonSprites:
+  - {fileID: 21300000, guid: 4664c631d9a859146ba0f77dedf21ea9, type: 3}
+  - {fileID: 21300000, guid: a10a9634a48e1ea4e8d1ff359ff7915c, type: 3}
+  - {fileID: 21300000, guid: d77fe3ee5b83b174d823ba03b6645f97, type: 3}
+  _decoPersoSprites:
+  - {fileID: 21300000, guid: aaf94cdee6749b44983a0caa03c13d3b, type: 3}
+  - {fileID: 21300000, guid: a10010b26a544254c9d97269c9063f64, type: 3}
+  - {fileID: 21300000, guid: 24904cf916a76924a81b89160458158e, type: 3}
   _ballPrefab: {fileID: 6458457176902880303, guid: 0e7070d106a56144f920cab44141ef12, type: 3}
   _ballSpawningPoint: {fileID: 2828343483120122577}
   _inputLaunch: {fileID: -549412763989558617, guid: 12481981812f17449beb87b7a0759a49, type: 3}
@@ -63,6 +71,7 @@ MonoBehaviour:
   _onPowerActivate:
     m_PersistentCalls:
       m_Calls: []
+  _audioManager: {fileID: 0}
 --- !u!114 &173710551061041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 6551030524895877740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.6, z: 0}
+  m_LocalPosition: {x: 0, y: -1.908, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,8 +159,8 @@ Transform:
   m_GameObject: {fileID: 8398894903251211301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.007, y: -0.6676, z: 0}
-  m_LocalScale: {x: 0.2, y: 1.42725, z: 1}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7312464708564690357}
@@ -197,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a10a9634a48e1ea4e8d1ff359ff7915c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
