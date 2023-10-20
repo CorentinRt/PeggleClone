@@ -155,7 +155,7 @@ public class PegsBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "ProxiTrigger") Hit();
+        if (collision.name == "ProxiTrigger" && !_hasBeenTouched) Hit();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
