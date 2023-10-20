@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(WinCoroutine());
     }
 
-    private void hasNoMoreBall()
+    private void hasNoMoreBall(bool noMore)
     {
-        _noMoreBall = true;
+        _noMoreBall = noMore;
     }
     private void Lose()
     {
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        _scene.ChangeScene(SceneManager.GetActiveScene().name);
+        // _scene.ChangeScene(SceneManager.GetActiveScene().name);
 
         yield return null;
     }

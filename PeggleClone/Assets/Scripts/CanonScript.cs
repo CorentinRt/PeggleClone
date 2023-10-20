@@ -155,5 +155,5 @@ public class CanonScript : MonoBehaviour
     }
 
     void ResetCanShoot() => _canShoot = true;
-    void StopPlaying() => _isPlaying = false;
+    void StopPlaying(bool noMore) => _isPlaying = !noMore;
 }
