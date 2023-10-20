@@ -2327,7 +2327,7 @@ MonoBehaviour:
         m_CallState: 2
   _victoryText: {fileID: 2139780551}
   _victoryTextCenterPosition: {fileID: 2139780550}
-  _nextScene: Level1
+  _nextScene: Level3
   _noMoreBall: 0
   _loseEvent:
     m_PersistentCalls:
