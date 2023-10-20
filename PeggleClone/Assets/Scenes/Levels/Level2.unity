@@ -1850,9 +1850,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
---- !u!1 &539083693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &539083693 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
   m_PrefabInstance: {fileID: 539083692}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &564185708
@@ -3130,9 +3130,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
---- !u!1 &822585575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &822585575 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
   m_PrefabInstance: {fileID: 822585574}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &827393563
@@ -3846,9 +3846,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
---- !u!1 &937495844 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &937495844 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
   m_PrefabInstance: {fileID: 937495843}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &981273409
@@ -4355,16 +4355,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _victoryText: {fileID: 0}
-  _victoryTextCenterPosition: {fileID: 0}
+  _victoryText: {fileID: 1598398946}
+  _victoryTextCenterPosition: {fileID: 2020836706}
   _nextScene: Level3
   _noMoreBall: 0
   _loseEvent:
     m_PersistentCalls:
       m_Calls: []
-  _loseText: {fileID: 0}
-  _loseTextCenterPosition: {fileID: 0}
-  _losePanel: {fileID: 0}
+  _loseText: {fileID: 1590017874}
+  _loseTextCenterPosition: {fileID: 1030272368}
+  _losePanel: {fileID: 2138344810}
   _hasLose: 0
   _totalPoints: 0
 --- !u!4 &1205009177
@@ -5171,9 +5171,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
---- !u!1 &1470324454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9199830306817741774, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
+--- !u!198 &1470324454 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1907697692855390355, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
   m_PrefabInstance: {fileID: 1470324453}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1502857031
@@ -5388,14 +5388,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContinuousVictory (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 9199830306817741774, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
---- !u!1 &1553889751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9199830306817741774, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
+--- !u!198 &1553889751 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1907697692855390355, guid: d7488ba651a127a468cb4dfb644ad8b4, type: 3}
   m_PrefabInstance: {fileID: 1553889750}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1565578174
@@ -7539,9 +7543,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
---- !u!1 &1955597854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2073027521613878606, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
+--- !u!198 &1955597854 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 444097701105449007, guid: 88ac5674702a0f846a4358a7ff806d26, type: 3}
   m_PrefabInstance: {fileID: 1955597853}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1985968960

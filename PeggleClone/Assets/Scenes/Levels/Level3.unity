@@ -2079,16 +2079,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _victoryText: {fileID: 0}
-  _victoryTextCenterPosition: {fileID: 0}
+  _victoryText: {fileID: 1890322883}
+  _victoryTextCenterPosition: {fileID: 1488415201}
   _nextScene: Level3
   _noMoreBall: 0
   _loseEvent:
     m_PersistentCalls:
       m_Calls: []
-  _loseText: {fileID: 0}
-  _loseTextCenterPosition: {fileID: 0}
-  _losePanel: {fileID: 0}
+  _loseText: {fileID: 1116540701}
+  _loseTextCenterPosition: {fileID: 1668221572}
+  _losePanel: {fileID: 1785524992}
   _hasLose: 0
   _totalPoints: 0
 --- !u!4 &439450505
