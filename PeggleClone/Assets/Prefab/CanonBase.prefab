@@ -55,6 +55,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: aaf94cdee6749b44983a0caa03c13d3b, type: 3}
   - {fileID: 21300000, guid: a10010b26a544254c9d97269c9063f64, type: 3}
   - {fileID: 21300000, guid: 24904cf916a76924a81b89160458158e, type: 3}
+  _portraitPersoSprites:
+  - {fileID: 21300000, guid: fde7871110d46cb4c8149242903fd0be, type: 3}
+  - {fileID: 21300000, guid: d17a49305c4e7b54e89aebbfbbcde703, type: 3}
+  - {fileID: 21300000, guid: 4f151339c570e35408d17d5a46aea818, type: 3}
   _ballPrefab: {fileID: 6458457176902880303, guid: 0e7070d106a56144f920cab44141ef12, type: 3}
   _ballSpawningPoint: {fileID: 2828343483120122577}
   _inputLaunch: {fileID: -549412763989558617, guid: 12481981812f17449beb87b7a0759a49, type: 3}
@@ -72,6 +76,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _audioManager: {fileID: 0}
+  _ultCharacter1: {fileID: 21300000, guid: d934e0e3c0047d14aa83df79d12e7ca6, type: 3}
+  _ultCharacter2: {fileID: 21300000, guid: 3a4284d41adbe4f44b4b66f26b6180ea, type: 3}
+  _ultCharacter3: {fileID: 21300000, guid: fede084d8dc27d84382e779b6ea395a7, type: 3}
 --- !u!114 &173710551061041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
