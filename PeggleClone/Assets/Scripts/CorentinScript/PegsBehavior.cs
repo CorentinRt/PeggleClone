@@ -84,7 +84,10 @@ public class PegsBehavior : MonoBehaviour
             currentPoints.Play();
 
             // Points and importantPegglesCount
-            _gameManager.NumberToDestroy--;
+            if(_isImportant)
+            {
+                _gameManager.NumberToDestroy--;
+            }
 
             _gameManager.AddPoints(_pointsValue);
 
@@ -126,6 +129,8 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
+            _gameManager.NumberToDestroy++;
+
             _pointsValue = 2000;
             _pointsParticles = _pointsParticles2000;
 
