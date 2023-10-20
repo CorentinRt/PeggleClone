@@ -31,6 +31,8 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("playerPoints", 0);
+
         _firstMenuPanel.SetActive(true);
         _secondMenuPanel.SetActive(false);
     }
