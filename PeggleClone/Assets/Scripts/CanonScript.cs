@@ -76,7 +76,7 @@ public class CanonScript : MonoBehaviour
 
                 _currentUltCharacter = _ultCharacter2;
 
-                _currentPower = PowerList.SIZE;
+                _currentPower = PowerList.PROXI;
                 break;
             case "character3":
                 _sR.sprite = _canonSprites[2];
@@ -85,7 +85,7 @@ public class CanonScript : MonoBehaviour
 
                 _currentUltCharacter = _ultCharacter3;
 
-                _currentPower = PowerList.PROXI;
+                _currentPower = PowerList.SIZE;
                 break;
         }
         UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
