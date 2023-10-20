@@ -12,6 +12,8 @@ public class CanonScript : MonoBehaviour
 
     [SerializeField] List<Sprite> _canonSprites;
     [SerializeField] List<Sprite> _decoPersoSprites;
+    [SerializeField] List<Sprite> _portraitPersoSprites;
+
     [SerializeField] GameObject _ballPrefab;
     [SerializeField] Transform _ballSpawningPoint;
     [SerializeField] InputActionReference _inputLaunch;
@@ -61,6 +63,7 @@ public class CanonScript : MonoBehaviour
             case "character1":
                 _sR.sprite = _canonSprites[0];
                 UIScript.instance.decoPerso = _decoPersoSprites[0];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[0];
 
                 _currentUltCharacter = _ultCharacter1;
 
@@ -69,6 +72,7 @@ public class CanonScript : MonoBehaviour
             case "character2":
                 _sR.sprite = _canonSprites[1];
                 UIScript.instance.decoPerso = _decoPersoSprites[1];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[1];
 
                 _currentUltCharacter = _ultCharacter2;
 
@@ -77,6 +81,7 @@ public class CanonScript : MonoBehaviour
             case "character3":
                 _sR.sprite = _canonSprites[2];
                 UIScript.instance.decoPerso = _decoPersoSprites[2];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[2];
 
                 _currentUltCharacter = _ultCharacter3;
 
