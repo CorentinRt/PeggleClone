@@ -288,7 +288,7 @@ MonoBehaviour:
   _sprite: {fileID: 4620906861671687060}
   _isImportant: 0
   _currentSpecialtie: 0
-  BounceMultiplier: 1.5
+  BounceMultiplier: 1.35
   _hasBeenTouched: 0
   _preDestructionTime: 2
   _gameManager: {fileID: 0}
