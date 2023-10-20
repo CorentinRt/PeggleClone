@@ -37,6 +37,8 @@ public class CanonScript : MonoBehaviour
     [SerializeField] UnityEvent _onFire;
     [SerializeField] UnityEvent _onPowerActivate;
 
+    [SerializeField] private AudioManager _audioManager;
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
@@ -60,12 +62,16 @@ public class CanonScript : MonoBehaviour
         bool launchInput = _inputLaunch.action.WasPressedThisFrame();
         if (launchInput  && _canShoot && _isPlaying)
         {
+            _audioManager.PlayShotBallSound();
+
             _canShoot = false;
             _onFire.Invoke();
             BallManager.instance.ballsRemaining--;
             UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
 
             GameObject ball = Instantiate(_ballPrefab, _ballSpawningPoint.position, Quaternion.identity);
+            ball.GetComponent<BallScript>().AudioManager = _audioManager;
+
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
             ballRB2D.velocity = new Vector2(_currentDirection.x * _horizontalForce, _currentDirection.y * _verticalForce);
 
@@ -83,6 +89,8 @@ public class CanonScript : MonoBehaviour
                         ball.GetComponent<BallScript>().activateProxi = true;
                         break;
                 }
+
+                _audioManager.PlayPowerShotSound();
 
                 powerAvailable = false;
             }
