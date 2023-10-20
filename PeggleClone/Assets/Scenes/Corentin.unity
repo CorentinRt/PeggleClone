@@ -1766,13 +1766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d52df6a3925dec49aea537d498300c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitClip: {fileID: 0}
-  _powerReady: {fileID: 0}
-  _powerShot: {fileID: 0}
-  _shotBall: {fileID: 0}
-  _lostBall: {fileID: 0}
-  _musicMenu: {fileID: 0}
-  _levelMenu: {fileID: 0}
+  _hitClip: {fileID: 8300000, guid: c56e2a8873712a243a8cb7feabc7f5fb, type: 3}
+  _powerReady: {fileID: 8300000, guid: 0f7593ba3ae326e47b7902a797ebbc48, type: 3}
+  _powerShot: {fileID: 8300000, guid: b5a2950f4aa75074eb45df4b2524a5e9, type: 3}
+  _shotBall: {fileID: 8300000, guid: 7d09180ccaf84934ca13518e2f7e33b8, type: 3}
+  _lostBall: {fileID: 8300000, guid: a7aae46683681604589772c5263f433e, type: 3}
+  _musicMenu: {fileID: 8300000, guid: fe3f8897b0f8ff54e94003900cac18cd, type: 3}
+  _levelMenu: {fileID: 8300000, guid: 62f97dcd6dfb1fc46bf8ecd61acf6ab3, type: 3}
 --- !u!1 &1306384688
 GameObject:
   m_ObjectHideFlags: 0

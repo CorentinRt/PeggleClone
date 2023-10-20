@@ -70,6 +70,8 @@ public class CanonScript : MonoBehaviour
             UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
 
             GameObject ball = Instantiate(_ballPrefab, _ballSpawningPoint.position, Quaternion.identity);
+            ball.GetComponent<BallScript>().AudioManager = _audioManager;
+
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
             ballRB2D.velocity = new Vector2(_currentDirection.x * _horizontalForce, _currentDirection.y * _verticalForce);
 

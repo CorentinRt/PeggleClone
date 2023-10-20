@@ -9,9 +9,10 @@ public class BallScript : MonoBehaviour
 
     [SerializeField] GameObject _proxiTrigger;
 
-    [SerializeField] AudioManager _audioManager;
+    private AudioManager _audioManager;
     public bool activateProxi {  get => _proxiTrigger.activeSelf; set => _proxiTrigger.SetActive(value); }
 
+    public AudioManager AudioManager { get => _audioManager; set => _audioManager = value; }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
