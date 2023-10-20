@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(WinCoroutine());
     }
 
-    private void hasNoMoreBall()
+    private void hasNoMoreBall(bool noMore)
     {
-        _noMoreBall = true;
+        _noMoreBall = noMore;
     }
     private void Lose()
     {
