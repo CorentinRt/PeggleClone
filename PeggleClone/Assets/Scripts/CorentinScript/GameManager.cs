@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        _scene.ChangeScene(SceneManager.GetActiveScene().name);
+        // _scene.ChangeScene(SceneManager.GetActiveScene().name);
 
         yield return null;
     }
