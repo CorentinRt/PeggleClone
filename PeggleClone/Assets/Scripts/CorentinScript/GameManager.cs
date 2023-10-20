@@ -87,7 +87,13 @@ public class GameManager : MonoBehaviour
         BallScript.OnFallen += Lose;
     }
 
-    
+    private void OnDisable()
+    {
+        BallManager.OnNoBalls -= hasNoMoreBall;
+        BallScript.OnFallen -= Lose;
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
