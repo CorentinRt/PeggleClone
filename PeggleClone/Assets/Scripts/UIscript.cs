@@ -12,9 +12,11 @@ public class UIScript : MonoBehaviour
     [SerializeField] TMP_Text _scoreText;
     [SerializeField] UIPowerUpGauge _powerUpGauge;
     [SerializeField] Image _decoPerso;
+    [SerializeField] Image _portraitPerso;
 
     public UIPowerUpGauge powerUpGauge { get => _powerUpGauge; }
     public Sprite decoPerso { set => _decoPerso.sprite = value; }
+    public Sprite portraitPerso { set => _portraitPerso.sprite = value; }
 
     private void Awake()
     {

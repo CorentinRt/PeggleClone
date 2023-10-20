@@ -12,6 +12,8 @@ public class CanonScript : MonoBehaviour
 
     [SerializeField] List<Sprite> _canonSprites;
     [SerializeField] List<Sprite> _decoPersoSprites;
+    [SerializeField] List<Sprite> _portraitPersoSprites;
+
     [SerializeField] GameObject _ballPrefab;
     [SerializeField] Transform _ballSpawningPoint;
     [SerializeField] InputActionReference _inputLaunch;
@@ -23,6 +25,8 @@ public class CanonScript : MonoBehaviour
     [Header("Force")]
     [SerializeField] [Range(0,100f)]  float _horizontalForce;
     [SerializeField] [Range(0,100f)]  float _verticalForce;
+
+    
 
     public enum PowerList { SIZE, FORCE, PROXI};
     [Header("Powers")]
@@ -41,6 +45,10 @@ public class CanonScript : MonoBehaviour
     [SerializeField] UnityEvent _onPowerActivate;
 
     [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private Sprite _ultCharacter1;
+    [SerializeField] private Sprite _ultCharacter2;
+    [SerializeField] private Sprite _ultCharacter3;
+    private Sprite _currentUltCharacter;
 
     private void Start()
     {
@@ -55,18 +63,27 @@ public class CanonScript : MonoBehaviour
             case "character1":
                 _sR.sprite = _canonSprites[0];
                 UIScript.instance.decoPerso = _decoPersoSprites[0];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[0];
+
+                _currentUltCharacter = _ultCharacter1;
 
                 _currentPower = PowerList.FORCE;
                 break;
             case "character2":
                 _sR.sprite = _canonSprites[1];
                 UIScript.instance.decoPerso = _decoPersoSprites[1];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[1];
+
+                _currentUltCharacter = _ultCharacter2;
 
                 _currentPower = PowerList.SIZE;
                 break;
             case "character3":
                 _sR.sprite = _canonSprites[2];
                 UIScript.instance.decoPerso = _decoPersoSprites[2];
+                UIScript.instance.portraitPerso = _portraitPersoSprites[2];
+
+                _currentUltCharacter = _ultCharacter3;
 
                 _currentPower = PowerList.PROXI;
                 break;
@@ -94,6 +111,10 @@ public class CanonScript : MonoBehaviour
             UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
 
             GameObject ball = Instantiate(_ballPrefab, _ballSpawningPoint.position, Quaternion.identity);
+            if (_activePower)
+            {
+                ball.GetComponent<SpriteRenderer>().sprite = _currentUltCharacter;
+            }
             ball.GetComponent<BallScript>().AudioManager = _audioManager;
 
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
