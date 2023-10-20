@@ -72,6 +72,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _audioManager: {fileID: 0}
+  _ultCharacter1: {fileID: 21300000, guid: d934e0e3c0047d14aa83df79d12e7ca6, type: 3}
+  _ultCharacter2: {fileID: 21300000, guid: 3a4284d41adbe4f44b4b66f26b6180ea, type: 3}
+  _ultCharacter3: {fileID: 21300000, guid: fede084d8dc27d84382e779b6ea395a7, type: 3}
 --- !u!114 &173710551061041318
 MonoBehaviour:
   m_ObjectHideFlags: 0
