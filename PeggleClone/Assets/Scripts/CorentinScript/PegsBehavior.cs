@@ -57,6 +57,9 @@ public class PegsBehavior : MonoBehaviour
         switch (_currentSpecialtie)
         {
             case Specialties.POWER:
+
+                _audioManager.PlayPowerReadySound();
+
                 CanonScript.instance.powerAvailable = true;
                 UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
                 break;

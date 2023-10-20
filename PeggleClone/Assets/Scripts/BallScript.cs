@@ -8,6 +8,8 @@ public class BallScript : MonoBehaviour
     public static event Fallen OnFallen;
 
     [SerializeField] GameObject _proxiTrigger;
+
+    [SerializeField] AudioManager _audioManager;
     public bool activateProxi {  get => _proxiTrigger.activeSelf; set => _proxiTrigger.SetActive(value); }
 
 
@@ -15,6 +17,7 @@ public class BallScript : MonoBehaviour
     {
         if(collision.tag == "endTrigger")
         {
+            _audioManager.PlayLostBallSound();
             OnFallen();
             Destroy(gameObject);
         }

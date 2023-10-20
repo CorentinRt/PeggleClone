@@ -55,7 +55,10 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(_source.clip != null)
+        {
+            _source.Play();
+        }
     }
 
     // Update is called once per frame
