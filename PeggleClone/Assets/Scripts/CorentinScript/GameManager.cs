@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
-    [SerializeField] string _currentScene;
 
     [Header("Lose Condition")]
     [SerializeField] private bool _noMoreBall;
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        _scene.ChangeScene(_currentScene);
+        _scene.ChangeScene(SceneManager.GetActiveScene().name);
 
         yield return null;
     }
