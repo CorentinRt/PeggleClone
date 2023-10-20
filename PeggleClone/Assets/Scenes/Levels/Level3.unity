@@ -4492,6 +4492,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1613
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1051
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -363
+      objectReference: {fileID: 0}
+    - target: {fileID: 489940226588888886, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 508815321835049320, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141455251000972723, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141455251000972723, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d7ee51bbdf8d2943aa735734c25a27e, type: 3}
+    - target: {fileID: 1688641987109398478, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688641987109398478, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9b6fc9a3aff10904bba82e44529decbc, type: 3}
+    - target: {fileID: 1746025156889223561, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1746025156889223561, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1990839917576030869, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
       propertyPath: m_Name
       value: CanvasUI
@@ -4608,6 +4664,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 380.0822
       objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1613
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475947423295501033, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4622104759686360685, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -4632,6 +4716,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5826590193759783199, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 99816236}
+    - target: {fileID: 5826590193759783199, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826590193759783199, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 5849880170658486037, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4651,6 +4747,22 @@ PrefabInstance:
     - target: {fileID: 7372962763933188215, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 482
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570456762592120064, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 99816236}
+    - target: {fileID: 7570456762592120064, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660697508594544645, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_fontSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660697508594544645, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8392766599523639597, guid: f93a775e9170575478b145b33fdbe85b, type: 3}
       propertyPath: m_Value
