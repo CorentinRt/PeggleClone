@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,6 +44,21 @@ public class CanonScript : MonoBehaviour
     {
         if (instance != null) Destroy(gameObject);
         instance = this;
+
+        string _currentCharacter = "character1";
+        if (PlayerPrefs.HasKey("character")) _currentCharacter = PlayerPrefs.GetString("character");
+        switch (_currentCharacter)
+        {
+            case "character1":
+                _currentPower = PowerList.FORCE;
+                break;
+            case "character2":
+                _currentPower = PowerList.SIZE;
+                break;
+            case "character3":
+                _currentPower = PowerList.PROXI;
+                break;
+        }
     }
 
     private void OnEnable()
