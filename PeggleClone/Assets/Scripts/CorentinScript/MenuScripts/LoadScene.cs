@@ -7,11 +7,15 @@ public class LoadScene : MonoBehaviour
 {
     // Fields
 
+    private GameManager _gameManager;
+
     // Properties
 
     // Methods
     public void ChangeScene(string sceneName)
     {
+        PlayerPrefs.SetInt("playerPoints", _gameManager.TotalPoints);
+
         SceneManager.LoadScene(sceneName);
     }
     public void QuitGame()
@@ -22,7 +26,15 @@ public class LoadScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (_gameManager.TotalPoints == 0)
+        {
+            PlayerPrefs.SetInt("PlayerPoints", 0);
+        }
+
+        if (_gameManager == null)
+        {
+            _gameManager = GameManager.Instance;
+        }
     }
 
     // Update is called once per frame

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Properties
     public int NumberToDestroy { get => _numberToDestroy; set => _numberToDestroy = value; }
     public static GameManager Instance { get => _instance; set => _instance = value; }
+    public int TotalPoints { get => _totalPoints; set => _totalPoints = value; }
 
 
     // Methods
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
+        _totalPoints = PlayerPrefs.GetInt("playerPoints");
         _instance = this;
     }
 
@@ -84,7 +86,9 @@ public class GameManager : MonoBehaviour
         BallManager.OnNoBalls += hasNoMoreBall;
         BallScript.OnFallen += Lose;
     }
+
     
+
     // Start is called before the first frame update
     void Start()
     {
