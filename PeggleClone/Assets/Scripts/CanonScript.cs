@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -37,10 +38,27 @@ public class CanonScript : MonoBehaviour
     [SerializeField] UnityEvent _onFire;
     [SerializeField] UnityEvent _onPowerActivate;
 
+    [SerializeField] private AudioManager _audioManager;
+
     private void Awake()
     {
         if (instance != null) Destroy(gameObject);
         instance = this;
+
+        string _currentCharacter = "character1";
+        if (PlayerPrefs.HasKey("character")) _currentCharacter = PlayerPrefs.GetString("character");
+        switch (_currentCharacter)
+        {
+            case "character1":
+                _currentPower = PowerList.FORCE;
+                break;
+            case "character2":
+                _currentPower = PowerList.SIZE;
+                break;
+            case "character3":
+                _currentPower = PowerList.PROXI;
+                break;
+        }
     }
 
     private void OnEnable()
@@ -60,12 +78,16 @@ public class CanonScript : MonoBehaviour
         bool launchInput = _inputLaunch.action.WasPressedThisFrame();
         if (launchInput  && _canShoot && _isPlaying)
         {
+            _audioManager.PlayShotBallSound();
+
             _canShoot = false;
             _onFire.Invoke();
             BallManager.instance.ballsRemaining--;
             UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
 
             GameObject ball = Instantiate(_ballPrefab, _ballSpawningPoint.position, Quaternion.identity);
+            ball.GetComponent<BallScript>().AudioManager = _audioManager;
+
             Rigidbody2D ballRB2D = ball.GetComponent<Rigidbody2D>();
             ballRB2D.velocity = new Vector2(_currentDirection.x * _horizontalForce, _currentDirection.y * _verticalForce);
 
@@ -83,6 +105,8 @@ public class CanonScript : MonoBehaviour
                         ball.GetComponent<BallScript>().activateProxi = true;
                         break;
                 }
+
+                _audioManager.PlayPowerShotSound();
 
                 powerAvailable = false;
             }

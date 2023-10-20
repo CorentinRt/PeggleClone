@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Following Scene")]
     [SerializeField] string _nextScene;
-    [SerializeField] string _currentScene;
 
     [Header("Lose Condition")]
     [SerializeField] private bool _noMoreBall;
@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Properties
     public int NumberToDestroy { get => _numberToDestroy; set => _numberToDestroy = value; }
     public static GameManager Instance { get => _instance; set => _instance = value; }
+    public int TotalPoints { get => _totalPoints; set => _totalPoints = value; }
 
 
     // Methods
@@ -72,9 +73,11 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int points)
     {
         _totalPoints += points;
+        UIScript.instance.UpdateScoreText(_totalPoints);
     }
     private void Awake()
     {
+        _totalPoints = PlayerPrefs.GetInt("playerPoints");
         _instance = this;
     }
 
@@ -83,7 +86,9 @@ public class GameManager : MonoBehaviour
         BallManager.OnNoBalls += hasNoMoreBall;
         BallScript.OnFallen += Lose;
     }
+
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,7 +155,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        _scene.ChangeScene(_currentScene);
+        _scene.ChangeScene(SceneManager.GetActiveScene().name);
 
         yield return null;
     }

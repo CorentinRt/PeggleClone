@@ -6,9 +6,13 @@ using UnityEngine.Events;
 public class PegsBehavior : MonoBehaviour
 {
     // Fields
+    [SerializeField] SpriteRenderer _sprite;
+
     [Header("Specificité")]
     [SerializeField] private bool _isImportant;
-    [SerializeField] private bool _isPowerUp;
+    private enum Specialties { NONE, GIVEBALL, SCORE, BOUNCE, POWER}
+    [SerializeField] private Specialties _currentSpecialtie;
+    [SerializeField] float BounceMultiplier;
 
     [Header("Gestion collision")]
     [SerializeField] private bool _hasBeenTouched;
@@ -24,9 +28,7 @@ public class PegsBehavior : MonoBehaviour
 
     [Header("Gestion Visual")]
     [SerializeField] private Sprite _normalSprite;
-    [SerializeField] private Sprite _normalSpriteTouched;
     [SerializeField] private Sprite _importantSprite;
-    [SerializeField] private Sprite _importantSpriteTouched;
 
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
@@ -39,8 +41,9 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private float _initialPitch;
     [SerializeField] private float _pitchGap;
 
+    [SerializeField] private Material _hitMaterial;
+
     private Sprite _currentSprite;
-    private Sprite _currentSpriteTouched;
 
     [Header("Event")]
     [SerializeField] UnityEvent OnHit;
@@ -52,10 +55,23 @@ public class PegsBehavior : MonoBehaviour
     {
         OnHit.Invoke();
         _hasBeenTouched = true;
-        if (_isPowerUp)
+        _sprite.material = _hitMaterial;
+        switch (_currentSpecialtie)
         {
-            CanonScript.instance.powerAvailable = true;
-            UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
+            case Specialties.POWER:
+
+                _audioManager.PlayPowerReadySound();
+
+                CanonScript.instance.powerAvailable = true;
+                UIScript.instance.powerUpGauge.StartGaugeAnimation(true);
+                break;
+            case Specialties.SCORE:
+                GameManager.Instance.AddPoints( 2 * _pointsValue);
+                break;
+            case Specialties.GIVEBALL:
+                BallManager.instance.ballsRemaining++;
+                UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
+                break;
         }
     }
 
@@ -73,7 +89,10 @@ public class PegsBehavior : MonoBehaviour
             currentPoints.Play();
 
             // Points and importantPegglesCount
-            _gameManager.NumberToDestroy--;
+            if(_isImportant)
+            {
+                _gameManager.NumberToDestroy--;
+            }
 
             _gameManager.AddPoints(_pointsValue);
 
@@ -87,12 +106,6 @@ public class PegsBehavior : MonoBehaviour
 
     public void PeggleHit()
     {
-        // Change the sprite
-        if (_currentSpriteTouched != null)
-        {
-            GetComponent<SpriteRenderer>().sprite = _currentSpriteTouched;
-        }
-
         // Make the sound more high
         _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
         _audioManager.PlayHitSound();
@@ -115,11 +128,12 @@ public class PegsBehavior : MonoBehaviour
         _hasBeenTouched = false;
         if (_isImportant)
         {
+            _gameManager.NumberToDestroy++;
+
             _pointsValue = 2000;
             _pointsParticles = _pointsParticles2000;
 
             _currentSprite = _importantSprite;
-            _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
@@ -127,7 +141,6 @@ public class PegsBehavior : MonoBehaviour
             _pointsParticles = _pointsParticles1000;
 
             _currentSprite = _normalSprite;
-            _currentSpriteTouched = _normalSpriteTouched;
         }
         if (_currentSprite != null)
         {
@@ -142,12 +155,21 @@ public class PegsBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name == "ProxiTrigger") Hit();
+        if (collision.name == "ProxiTrigger" && !_hasBeenTouched) Hit();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched) Hit();
+        if (collision.gameObject.CompareTag("Balle") && !_hasBeenTouched)
+        {
+            Hit();
+            if (_currentSpecialtie == Specialties.BOUNCE)
+            {
+                Rigidbody2D PlayerRB = collision.transform.GetComponent<Rigidbody2D>();
+                PlayerRB.velocity = (new Vector2(-PlayerRB.velocity.x * BounceMultiplier,
+                                                 -PlayerRB.velocity.y * BounceMultiplier));
+            }
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

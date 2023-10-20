@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip _shotBall;
     [SerializeField] private AudioClip _lostBall;
     [SerializeField] private AudioClip _musicMenu;
-    [SerializeField] private AudioClip _levelMenu;
+    [SerializeField] private AudioClip _musicLevel;
 
     
 
@@ -55,7 +55,10 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(_source.clip != null)
+        {
+            _source.Play();
+        }
     }
 
     // Update is called once per frame
