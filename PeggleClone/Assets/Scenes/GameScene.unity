@@ -1251,7 +1251,6 @@ MonoBehaviour:
   _victoryText: {fileID: 720626584}
   _victoryTextCenterPosition: {fileID: 518465253}
   _nextScene: 
-  _currentScene: 
   _noMoreBall: 0
   _loseEvent:
     m_PersistentCalls:
@@ -1793,7 +1792,7 @@ MonoBehaviour:
   _shotBall: {fileID: 0}
   _lostBall: {fileID: 0}
   _musicMenu: {fileID: 0}
-  _levelMenu: {fileID: 0}
+  _musicLevel: {fileID: 0}
 --- !u!82 &947122086
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1964,6 +1963,10 @@ PrefabInstance:
     - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: m_Name
       value: PegCircle (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _gameManager
@@ -2441,6 +2444,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PegCircle
       objectReference: {fileID: 0}
+    - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _gameManager
       value: 
@@ -2466,6 +2473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4248279353291485342, guid: 467e12adcf74c7c4b940f1c91619b759, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 947122085}
     - target: {fileID: 4248279353291485342, guid: 467e12adcf74c7c4b940f1c91619b759, type: 3}
       propertyPath: _currentPower
       value: 2
@@ -3066,6 +3077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PegCircle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _gameManager
       value: 
@@ -3138,6 +3153,10 @@ PrefabInstance:
     - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: m_Name
       value: PegCircle (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _gameManager
@@ -3409,6 +3428,10 @@ PrefabInstance:
     - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: m_Name
       value: PegCircle (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403468805268833643, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7628727155012910249, guid: 39a59bde8b684334f97207289dcf1fc7, type: 3}
       propertyPath: _gameManager
