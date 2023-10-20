@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class PegsBehavior : MonoBehaviour
 {
     // Fields
+    [SerializeField] SpriteRenderer _sprite;
+
     [Header("Specificité")]
     [SerializeField] private bool _isImportant;
     private enum Specialties { NONE, GIVEBALL, SCORE, BOUNCE, POWER}
@@ -26,9 +28,7 @@ public class PegsBehavior : MonoBehaviour
 
     [Header("Gestion Visual")]
     [SerializeField] private Sprite _normalSprite;
-    [SerializeField] private Sprite _normalSpriteTouched;
     [SerializeField] private Sprite _importantSprite;
-    [SerializeField] private Sprite _importantSpriteTouched;
 
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
@@ -41,8 +41,9 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private float _initialPitch;
     [SerializeField] private float _pitchGap;
 
+    [SerializeField] private Material _hitMaterial;
+
     private Sprite _currentSprite;
-    private Sprite _currentSpriteTouched;
 
     [Header("Event")]
     [SerializeField] UnityEvent OnHit;
@@ -54,6 +55,7 @@ public class PegsBehavior : MonoBehaviour
     {
         OnHit.Invoke();
         _hasBeenTouched = true;
+        _sprite.material = _hitMaterial;
         switch (_currentSpecialtie)
         {
             case Specialties.POWER:
@@ -104,12 +106,6 @@ public class PegsBehavior : MonoBehaviour
 
     public void PeggleHit()
     {
-        // Change the sprite
-        if (_currentSpriteTouched != null)
-        {
-            GetComponent<SpriteRenderer>().sprite = _currentSpriteTouched;
-        }
-
         // Make the sound more high
         _audioManager.GetComponent<AudioSource>().pitch += _pitchGap;
         _audioManager.PlayHitSound();
@@ -138,7 +134,6 @@ public class PegsBehavior : MonoBehaviour
             _pointsParticles = _pointsParticles2000;
 
             _currentSprite = _importantSprite;
-            _currentSpriteTouched = _importantSpriteTouched;
         }
         else
         {
@@ -146,7 +141,6 @@ public class PegsBehavior : MonoBehaviour
             _pointsParticles = _pointsParticles1000;
 
             _currentSprite = _normalSprite;
-            _currentSpriteTouched = _normalSpriteTouched;
         }
         if (_currentSprite != null)
         {

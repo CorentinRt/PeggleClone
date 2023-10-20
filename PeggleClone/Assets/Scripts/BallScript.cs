@@ -9,7 +9,7 @@ public class BallScript : MonoBehaviour
 
     [SerializeField] GameObject _proxiTrigger;
 
-    private AudioManager _audioManager;
+    [SerializeField] private AudioManager _audioManager;
     public bool activateProxi {  get => _proxiTrigger.activeSelf; set => _proxiTrigger.SetActive(value); }
 
     public AudioManager AudioManager { get => _audioManager; set => _audioManager = value; }
