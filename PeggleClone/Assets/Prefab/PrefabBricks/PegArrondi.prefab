@@ -211,9 +211,11 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _pointsValue: 0
   _normalSprite: {fileID: 21300000, guid: 3b1aa23c930c44b40b64d61fdec42cb2, type: 3}
-  _normalSpriteTouched: {fileID: 0}
   _importantSprite: {fileID: 21300000, guid: 5ca14e5da74e58e42a65f5d28fa664ae, type: 3}
-  _importantSpriteTouched: {fileID: 0}
+  _giveballSprite: {fileID: 21300000, guid: 7a867554ca600574fab8104317b792fa, type: 3}
+  _scoreSprite: {fileID: 21300000, guid: d66fefdb0dda9d44992acb2f98c84233, type: 3}
+  _bounceSprite: {fileID: 21300000, guid: 82b1069f7c2b5b546a0dfc7176f4162c, type: 3}
+  _powerSprite: {fileID: 21300000, guid: 450bb0e950520c849953fe16e16fb731, type: 3}
   _explosionParticles: {fileID: 444097701105449007, guid: 50847e2b871455f4cb14219861a05edb, type: 3}
   _explosionParticles2: {fileID: 444097701105449007, guid: c4566bda0810c7f4c9b4cec6553bd632, type: 3}
   _pointsParticles1000: {fileID: 444097701105449007, guid: 93899ab08cc7dae4497820d633d0b6ad, type: 3}
