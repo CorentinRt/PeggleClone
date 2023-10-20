@@ -42,7 +42,7 @@ public class CanonScript : MonoBehaviour
 
     [SerializeField] private AudioManager _audioManager;
 
-    private void Awake()
+    private void Start()
     {
         if (instance != null) Destroy(gameObject);
         instance = this;
@@ -71,17 +71,13 @@ public class CanonScript : MonoBehaviour
                 _currentPower = PowerList.PROXI;
                 break;
         }
+        UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
     }
 
     private void OnEnable()
     {
         BallScript.OnFallen += ResetCanShoot;
         BallManager.OnNoBalls += StopPlaying;
-    }
-
-    private void Start()
-    {
-        UIScript.instance.UpdateBallText(BallManager.instance.ballsRemaining);
     }
 
     private void Update()
@@ -159,5 +155,5 @@ public class CanonScript : MonoBehaviour
     }
 
     void ResetCanShoot() => _canShoot = true;
-    void StopPlaying() => _isPlaying = false;
+    void StopPlaying(bool noMore) => _isPlaying = !noMore;
 }
