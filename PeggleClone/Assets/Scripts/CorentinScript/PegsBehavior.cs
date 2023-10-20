@@ -30,6 +30,12 @@ public class PegsBehavior : MonoBehaviour
     [SerializeField] private Sprite _normalSprite;
     [SerializeField] private Sprite _importantSprite;
 
+    [SerializeField] private Sprite _giveballSprite;
+    [SerializeField] private Sprite _scoreSprite;
+    [SerializeField] private Sprite _bounceSprite;
+    [SerializeField] private Sprite _powerSprite;
+
+
     [Header("Gestion effets")]
     [SerializeField] private ParticleSystem _explosionParticles;
     [SerializeField] private ParticleSystem _explosionParticles2;
@@ -126,22 +132,53 @@ public class PegsBehavior : MonoBehaviour
     void Start()
     {
         _hasBeenTouched = false;
-        if (_isImportant)
+
+
+        switch (_currentSpecialtie)
         {
-            _gameManager.NumberToDestroy++;
+            case Specialties.NONE:
+                if (_isImportant)
+                {
+                    _gameManager.NumberToDestroy++;
 
-            _pointsValue = 2000;
-            _pointsParticles = _pointsParticles2000;
+                    _pointsValue = 2000;
+                    _pointsParticles = _pointsParticles2000;
 
-            _currentSprite = _importantSprite;
+                    _currentSprite = _importantSprite;
+                }
+                else
+                {
+                    _pointsValue = 1000;
+                    _pointsParticles = _pointsParticles1000;
+
+                    _currentSprite = _normalSprite;
+                }
+                break;
+
+            case Specialties.SCORE:
+                _currentSprite = _scoreSprite;
+                _pointsValue = 1000;
+                _pointsParticles = _pointsParticles2000;
+
+                break;
+            case Specialties.GIVEBALL:
+                _currentSprite = _giveballSprite;
+                _pointsParticles = _pointsParticles1000;
+                _pointsValue = 1000;
+                break;
+            case Specialties.BOUNCE:
+                _currentSprite = _bounceSprite;
+                _pointsValue = 1000;
+                _pointsParticles = _pointsParticles1000;
+                break;
+            case Specialties.POWER:
+                _currentSprite = _powerSprite;
+                _pointsValue = 1000;
+                _pointsParticles = _pointsParticles1000;
+                break;
         }
-        else
-        {
-            _pointsValue = 1000;
-            _pointsParticles = _pointsParticles1000;
 
-            _currentSprite = _normalSprite;
-        }
+        
         if (_currentSprite != null)
         {
             GetComponent<SpriteRenderer>().sprite = _currentSprite;

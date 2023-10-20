@@ -38,8 +38,30 @@
                 },
                 {
                     "name": "",
+                    "id": "3116a3b6-a1db-41c9-8634-324f6f18c325",
+                    "path": "<VirtualMouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LaunchBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ac5fd94e-6761-4acd-bced-6c3f10d47652",
                     "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivatePower",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d657819b-cf49-418a-88f7-7b44858487bf",
+                    "path": "<VirtualMouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
