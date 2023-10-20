@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a3c2bbf73703840a7612169512b5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sprite: {fileID: 6845068646098049091}
   _isImportant: 0
   _currentSpecialtie: 0
   BounceMultiplier: 2
@@ -151,6 +152,7 @@ MonoBehaviour:
   _audioManager: {fileID: 0}
   _initialPitch: 1
   _pitchGap: 0.2
+  _hitMaterial: {fileID: 2100000, guid: b86657008007d2b4e868971e97654f97, type: 2}
   OnHit:
     m_PersistentCalls:
       m_Calls:
