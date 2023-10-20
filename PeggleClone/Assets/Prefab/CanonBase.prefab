@@ -59,8 +59,8 @@ MonoBehaviour:
   _ballSpawningPoint: {fileID: 2828343483120122577}
   _inputLaunch: {fileID: -549412763989558617, guid: 12481981812f17449beb87b7a0759a49, type: 3}
   _inputPower: {fileID: -7889852155368465130, guid: 12481981812f17449beb87b7a0759a49, type: 3}
-  _horizontalForce: 30
-  _verticalForce: 30
+  _horizontalForce: 27
+  _verticalForce: 27
   _currentPower: 2
   _powerSizeFactor: 1.5
   _powerHorizontalForce: 60
