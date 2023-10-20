@@ -1219,7 +1219,6 @@ MonoBehaviour:
   _victoryText: {fileID: 568144483}
   _victoryTextCenterPosition: {fileID: 675329512}
   _nextScene: 
-  _currentScene: 
   _noMoreBall: 0
   _loseEvent:
     m_PersistentCalls:
@@ -1497,7 +1496,7 @@ Transform:
   m_GameObject: {fileID: 1047344919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83, y: 2.05, z: 0}
+  m_LocalPosition: {x: -5.17, y: 1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1772,7 +1771,7 @@ MonoBehaviour:
   _shotBall: {fileID: 8300000, guid: 7d09180ccaf84934ca13518e2f7e33b8, type: 3}
   _lostBall: {fileID: 8300000, guid: a7aae46683681604589772c5263f433e, type: 3}
   _musicMenu: {fileID: 8300000, guid: fe3f8897b0f8ff54e94003900cac18cd, type: 3}
-  _levelMenu: {fileID: 8300000, guid: 62f97dcd6dfb1fc46bf8ecd61acf6ab3, type: 3}
+  _musicLevel: {fileID: 0}
 --- !u!1 &1306384688
 GameObject:
   m_ObjectHideFlags: 0

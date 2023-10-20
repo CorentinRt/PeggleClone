@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
             Victory();
         }
 
-        if(_hasLose)    // Only use for debug
+        if(_hasLose && !_hasWin)    // Only use for debug
         {
             _hasLose = false;
             Lose();
